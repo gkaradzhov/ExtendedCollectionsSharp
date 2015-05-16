@@ -59,9 +59,17 @@ namespace ExtendedCollections
         {
             if (IsFull)
             {
-                _buffer.Dequeue();
+                var itemDiscarded = _buffer.Dequeue();
+                OnItemDiscarded(itemDiscarded, item);
             }
             _buffer.Enqueue(item);
+        }
+
+        private void OnItemDiscarded(T itemDiscarded, T newItem)
+        {
+            if (ItemDiscarded == null) return;
+            var args = new ItemDiscardedEventArgs<T>(itemDiscarded, newItem);
+            ItemDiscarded(this, args);
         }
         public T Read()
         {
@@ -92,6 +100,8 @@ namespace ExtendedCollections
         {
             return GetEnumerator();
         }
+
+        public event EventHandler<ItemDiscardedEventArgs<T>> ItemDiscarded; 
         #endregion
 
         #region Private methods
@@ -127,5 +137,6 @@ namespace ExtendedCollections
             _capacity = capacity;
         }
         #endregion
+
     }
 }

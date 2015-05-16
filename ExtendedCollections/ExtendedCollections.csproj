@@ -39,8 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CircularBuffer.cs" />
-    <Compile Include="Interfaces\IBuffer.cs" />
+    <Compile Include="CircularBuffer\CircularBuffer.cs" />
+    <Compile Include="CircularBuffer\IBuffer.cs" />
+    <Compile Include="CircularBuffer\ItemDiscardedEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

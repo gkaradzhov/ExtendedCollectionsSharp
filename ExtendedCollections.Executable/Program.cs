@@ -11,10 +11,14 @@ namespace ExtendedCollections.Executable
         static void Main(string[] args)
         {
             var buffer = new CircularBuffer<int>(4);
+
             buffer.Write(3);
             buffer.Write(4);
             buffer.Write(5);
             buffer.Write(6);
+            buffer.Write(6);
+            buffer.Write(6);
+
 
             foreach (var element in buffer)
             {
