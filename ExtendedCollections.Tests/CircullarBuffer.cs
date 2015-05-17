@@ -71,6 +71,10 @@ namespace ExtendedCollections.Tests
         {
             var buffer = new CircularBuffer<int>(4);
             Assert.IsTrue(buffer.IsEmpty);
+            buffer.Write(4);
+            buffer.Write(5);
+            Assert.IsFalse(buffer.IsEmpty);
+
         }
 
         [TestMethod]
@@ -78,7 +82,10 @@ namespace ExtendedCollections.Tests
         {
             var buffer = new CircularBuffer<int>(4);
 
+            Assert.IsFalse(buffer.IsFull);
             buffer.Write(3);
+            Assert.IsFalse(buffer.IsFull);
+
             buffer.Write(4);
             buffer.Write(5);
             buffer.Write(6);
