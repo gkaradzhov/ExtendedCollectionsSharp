@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\ExtendedCollections.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -39,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AVLTree\AVLTree.cs" />
+    <Compile Include="AVLTree\AVLTreeNode.cs" />
+    <Compile Include="AVLTree\TreeState.cs" />
     <Compile Include="CircularBuffer\CircularBuffer.cs" />
     <Compile Include="CircularBuffer\IBuffer.cs" />
     <Compile Include="CircularBuffer\ItemDiscardedEventArgs.cs" />
