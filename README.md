@@ -13,6 +13,6 @@ FIFO. When overflowed, the buffer drops the first element and queues the new one
 
 #Backlog
 ##AVLTree
--Write tests
--Refactoring
--Documentation
+- Write tests
+- Refactoring
+- Documentation
